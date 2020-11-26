@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChensMinionRetarget", "ChensMinionRetarget.csproj", "{2F4E254B-FBCA-47F3-B32E-06EE50FF850A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChensTemplate", "ChensTemplate.csproj", "{AEAC700B-5023-434B-A942-A0F35F261A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F4E254B-FBCA-47F3-B32E-06EE50FF850A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F4E254B-FBCA-47F3-B32E-06EE50FF850A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F4E254B-FBCA-47F3-B32E-06EE50FF850A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F4E254B-FBCA-47F3-B32E-06EE50FF850A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAC700B-5023-434B-A942-A0F35F261A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAC700B-5023-434B-A942-A0F35F261A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAC700B-5023-434B-A942-A0F35F261A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAC700B-5023-434B-A942-A0F35F261A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
