@@ -1,50 +1,52 @@
 ﻿#undef DEBUG
 
 using BepInEx;
-using BepInEx.Logging;
+using Chen.Helpers.LogHelpers;
 using R2API.Utils;
+//using static Chen.Helpers.GeneralHelpers.AssetsManager;
 
 namespace My.Mod.Namespace
 {
+    /// <summary>
+    /// Description of the plugin.
+    /// </summary>
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [R2APISubmoduleDependency("SomeAPI")]
     public class MyModPluginPlugin : BaseUnityPlugin
     {
+        /// <summary>
+        /// This mod's version.
+        /// </summary>
         public const string ModVer =
 #if DEBUG
             "0." +
 #endif
             "0.0.1";
 
+        /// <summary>
+        /// This mod's name.
+        /// </summary>
         public const string ModName = "MyModName";
+
+        /// <summary>
+        /// This mod's GUID.
+        /// </summary>
         public const string ModGuid = "com.Chen.MyModName";
 
-        public static ManualLogSource _logger;
+        internal static Log Log;
 
         private void Awake()
         {
-            _logger = Logger;
+            Log = new Log(Logger);
 
 #if DEBUG
-            Logger.LogWarning("Running test build with debug enabled!");
-            On.RoR2.Networking.GameNetworkManager.OnClientConnect += (self, user, t) => { };
+            Chen.Helpers.GeneralHelpers.MultiplayerTest.Enable(Log);
 #endif
-
-            //using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ChensTemplate.mymod_assets"))
-            //{
-            //    var bundle = AssetBundle.LoadFromStream(stream);
-            //    var provider = new AssetBundleResourcesProvider("@ChensGradiusMod", bundle);
-            //    ResourcesAPI.AddProvider(provider);
-            //}
-
-            //using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ChensTemplate.mymod_soundbank.bnk"))
-            //{
-            //    var bytes = new byte[stream.Length];
-            //    stream.Read(bytes, 0, bytes.Length);
-            //    SoundAPI.SoundBanks.Add(bytes);
-            //}
+            //BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
+            //BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
+            //new AssetsManager(assetBundle, soundBank).RegisterAll();
         }
     }
 }

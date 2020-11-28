@@ -9,6 +9,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>true</Optimize>
+    <DocumentationFile>C:\Users\Chen\Documents\Visual Studio 2019\Risk of Rain 2\RoR2-ChensTemplate\_docs\ChensTemplate_API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +25,9 @@
     </Reference>
     <Reference Include="BepInEx">
       <HintPath>lib\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ChensHelpers">
+      <HintPath>lib\ChensHelpers.dll</HintPath>
     </Reference>
     <Reference Include="MMHOOK_Assembly-CSharp">
       <HintPath>lib\MMHOOK_Assembly-CSharp.dll</HintPath>
@@ -49,7 +53,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\tristanmcpherson-R2API\R2API\R2API.dll&quot; &quot;$(ProjectDir)lib&quot; /Y&#xD;&#xA;xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\tristanmcpherson-R2API\R2API\MMHOOK_Assembly-CSharp.dll&quot; &quot;$(ProjectDir)lib&quot; /Y" />
+    <Exec Command="xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\tristanmcpherson-R2API\R2API\R2API.dll&quot; &quot;$(ProjectDir)lib&quot; /Y&#xD;&#xA;xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\tristanmcpherson-R2API\R2API\MMHOOK_Assembly-CSharp.dll&quot; &quot;$(ProjectDir)lib&quot; /Y&#xD;&#xA;xcopy &quot;C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\r2modman\BepInEx\plugins\Chen-ChensHelpers\ChensHelpers.dll&quot; &quot;$(ProjectDir)lib&quot; /Y" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
