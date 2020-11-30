@@ -1,9 +1,10 @@
 ﻿#undef DEBUG
 
 using BepInEx;
+using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
 using R2API.Utils;
-//using static Chen.Helpers.GeneralHelpers.AssetsManager;
+using static Chen.Helpers.GeneralHelpers.AssetsManager;
 
 namespace My.Mod.Namespace
 {
@@ -13,7 +14,7 @@ namespace My.Mod.Namespace
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
-    [R2APISubmoduleDependency("SomeAPI")]
+    [R2APISubmoduleDependency()]
     public class MyModPluginPlugin : BaseUnityPlugin
     {
         /// <summary>
@@ -23,7 +24,7 @@ namespace My.Mod.Namespace
 #if DEBUG
             "0." +
 #endif
-            "0.0.1";
+            "1.0.0";
 
         /// <summary>
         /// This mod's name.
@@ -44,9 +45,9 @@ namespace My.Mod.Namespace
 #if DEBUG
             Chen.Helpers.GeneralHelpers.MultiplayerTest.Enable(Log);
 #endif
-            //BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
-            //BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
-            //new AssetsManager(assetBundle, soundBank).RegisterAll();
+            BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
+            BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
+            new AssetsManager(assetBundle, soundBank).RegisterAll();
         }
     }
 }
