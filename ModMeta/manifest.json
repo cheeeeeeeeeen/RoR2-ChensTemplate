@@ -5,6 +5,7 @@
   "description": "My mod's description goes here.",
   "dependencies": [
     "bbepis-BepInExPack-5.3.1",
-    "tristanmcpherson-R2API-2.5.14"
+    "tristanmcpherson-R2API-2.5.14",
+    "Chen-ChensHelpers-1.0.2"
   ]
 }
