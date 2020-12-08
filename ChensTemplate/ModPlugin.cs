@@ -4,7 +4,10 @@ using BepInEx;
 using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
 using R2API.Utils;
+using System.Runtime.CompilerServices;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
+
+[assembly: InternalsVisibleTo("ChensTemplate.Tests")]
 
 namespace My.Mod.Namespace
 {
@@ -45,9 +48,18 @@ namespace My.Mod.Namespace
 #if DEBUG
             Chen.Helpers.GeneralHelpers.MultiplayerTest.Enable(Log);
 #endif
-            BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
-            BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
-            new AssetsManager(assetBundle, soundBank).RegisterAll();
+            //BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
+            //BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
+            //new AssetsManager(assetBundle, soundBank).RegisterAll();
+        }
+
+        internal static bool DebugCheck()
+        {
+#if DEBUG
+            return true;
+#else
+            return false;
+#endif
         }
     }
 }
