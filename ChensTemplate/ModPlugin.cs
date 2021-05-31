@@ -5,6 +5,7 @@ using Chen.Helpers.GeneralHelpers;
 using Chen.Helpers.LogHelpers;
 using R2API.Utils;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 using static Chen.Helpers.GeneralHelpers.AssetsManager;
 
 [assembly: InternalsVisibleTo("ChensTemplate.Tests")]
@@ -40,6 +41,7 @@ namespace My.Mod.Namespace
         public const string ModGuid = "com.Chen.MyModName";
 
         internal static Log Log;
+        internal static AssetBundle bundle;
 
         private void Awake()
         {
@@ -48,9 +50,10 @@ namespace My.Mod.Namespace
 #if DEBUG
             Chen.Helpers.GeneralHelpers.MultiplayerTest.Enable(Log);
 #endif
-            //BundleInfo assetBundle = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
-            //BundleInfo soundBank = new BundleInfo("@ChensTemplate", "ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
-            //new AssetsManager(assetBundle, soundBank).RegisterAll();
+            BundleInfo assetBundle = new BundleInfo("ChensTemplate.mymod_assets", BundleType.UnityAssetBundle);
+            BundleInfo soundBank = new BundleInfo("ChensTemplate.mymod_sounds.bnk", BundleType.WWiseSoundBank);
+            bundle = new AssetsManager(assetBundle).Register() as AssetBundle;
+            new AssetsManager(soundBank).Register();
         }
 
         internal static bool DebugCheck()
