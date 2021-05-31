@@ -67,38 +67,17 @@
             Keep an instance of this class internal or local to the mod.
             </summary>
         </member>
-        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.#ctor">
-            <summary>
-            The default constructor one may use to add bundles later.
-            </summary>
-        </member>
-        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.#ctor(Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo[])">
+        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.#ctor(Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo)">
             <summary>
             Constructor to use if the bundles are already made.
             </summary>
-            <param name="bundles">Group of bundles for the helper class to manage</param>
+            <param name="bundleInfo">Bundle for the helper class to manage</param>
         </member>
-        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.Add(Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo)">
+        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.Register">
             <summary>
-            Used to add a bundle for the manager to handle.
+            Invoke this method to start registering the bundle assigned to this manager.
             </summary>
-            <param name="bundle">A bundle data</param>
-            <returns>True if the bundle is added. False if the bundle already exists or has the same name.</returns>
-        </member>
-        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.Add(System.String,System.String,Chen.Helpers.GeneralHelpers.AssetsManager.BundleType)">
-            <summary>
-            Used to add a bundle for the manager to handle.
-            This is an overload alternative.
-            </summary>
-            <param name="modPrefix">Prefix to use for the bundle</param>
-            <param name="source">Embedded resource path of the bundle</param>
-            <param name="type">Bundle Type</param>
-            <returns>True if the bundle is added. False if the bundle already exists or has the same name.</returns>
-        </member>
-        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.RegisterAll">
-            <summary>
-            Invoke this method to start registering all bundles assigned to this manager.
-            </summary>
+            <returns>Null, or an AssetBundle object if the BundleType is a UnityAssetBundle.</returns>
         </member>
         <member name="T:Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo">
             <summary>
@@ -109,6 +88,7 @@
         <member name="F:Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo.modPrefix">
             <summary>
             The mod prefix is defined to be the identifier to the bundle for accessing. It should always start with "@".
+            Do not use this as this is already unused.
             </summary>
         </member>
         <member name="F:Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo.source">
@@ -123,9 +103,16 @@
         </member>
         <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo.#ctor(System.String,System.String,Chen.Helpers.GeneralHelpers.AssetsManager.BundleType)">
             <summary>
-            Constructor used to build BundleInfo.
+            Deprecated constructor used to build BundleInfo.
             </summary>
             <param name="modPrefix">The prefix used to access the bundle</param>
+            <param name="source">The resource path of the bundle</param>
+            <param name="type">Type of the bundle</param>
+        </member>
+        <member name="M:Chen.Helpers.GeneralHelpers.AssetsManager.BundleInfo.#ctor(System.String,Chen.Helpers.GeneralHelpers.AssetsManager.BundleType)">
+            <summary>
+            Constructor used to build BundleInfo.
+            </summary>
             <param name="source">The resource path of the bundle</param>
             <param name="type">Type of the bundle</param>
         </member>
@@ -875,6 +862,15 @@
             <param name="mode">Mode of shadow casting for each mesh</param>
             <param name="ignoreOverlays">Determines whether to display effects over the mesh, such as elite prefixes</param>
             <returns>A new set of RendererInfos</returns>
+        </member>
+        <member name="M:Chen.Helpers.UnityHelpers.RoR2Extensions.ReplaceModel(UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary>
+            Replaces the model inside a GameObject's Model Base.
+            This is only applicable to GameObjects that have a "ModelBase" or "Model Base" object, as well as a ModelLocator component.
+            The method will do nothing if it cannot find the model base object.
+            </summary>
+            <param name="originalClonedObject">The whole original cloned object</param>
+            <param name="replacementModel">The replacement model loaded from an asset bundle</param>
         </member>
     </members>
 </doc>
