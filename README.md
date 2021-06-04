@@ -15,9 +15,9 @@ A Risk of Rain 2 project that does nothing! It's only a template.
 
 ## Installation
 
-Use **[r2modman](https://thunderstore.io/package/ebkr/r2modman/)** mod manager to install this mod.
+Use **[Thunderstore Mod Manager](https://www.overwolf.com/app/Thunderstore-Thunderstore_Mod_Manager)** to install this mod.
 
-If one does not want to use a mod manager, then get the DLL from **[Thunderstore](https://thunderstore.io/your/mod/link/)**.
+If one does not want to use a mod manager, then get the DLL from **[Thunderstore](https://thunderstore.io/package/Chen/ChensTemplate/)**.
 
 ## Contact
 - Issue Page: https://github.com/cheeeeeeeeeen/RoR2-ChensTemplate/issues
