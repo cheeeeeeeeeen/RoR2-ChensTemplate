@@ -17,6 +17,7 @@ namespace My.Mod.Namespace
     /// </summary>
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, R2API.R2API.PluginVersion)]
+    [BepInDependency(Chen.Helpers.HelperPlugin.ModGuid, Chen.Helpers.HelperPlugin.ModVer)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [R2APISubmoduleDependency()]
     public class MyModPluginPlugin : BaseUnityPlugin
