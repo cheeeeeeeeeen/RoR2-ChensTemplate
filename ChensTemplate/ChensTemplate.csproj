@@ -9,11 +9,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>true</Optimize>
-    <DocumentationFile>_docs\ChensTemplate.xml</DocumentationFile>
+    <DocumentationFile>..\docs\ChensTemplate.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningLevel>5</WarningLevel>
+    <DocumentationFile>..\docs\ChensTemplate.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
