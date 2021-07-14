@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChensTemplate</name>
+    </assembly>
+    <members>
+        <member name="T:My.Mod.Namespace.MyModPluginPlugin">
+            <summary>
+            Description of the plugin.
+            </summary>
+        </member>
+        <member name="F:My.Mod.Namespace.MyModPluginPlugin.ModVer">
+            <summary>
+            This mod's version.
+            </summary>
+        </member>
+        <member name="F:My.Mod.Namespace.MyModPluginPlugin.ModName">
+            <summary>
+            This mod's name.
+            </summary>
+        </member>
+        <member name="F:My.Mod.Namespace.MyModPluginPlugin.ModGuid">
+            <summary>
+            This mod's GUID.
+            </summary>
+        </member>
+    </members>
+</doc>
